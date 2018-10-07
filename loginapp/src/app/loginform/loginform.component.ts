@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-loginform',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginformComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private user: UserService) { }
 
   ngOnInit() {
+  }
+
+  loginUser(e) {
+    e.preventDefault();
+    console.log(e);
+    const username = e.target.elements[0].value;
+    const password = e.target.elements[1].value;
+
+    if (username === 'admin' && password === 'admin') {
+      this.user.setUserLoggedIn();
+      this.router.navigate(['/dashboard']);
+
+    }
+
+
+
+
   }
 
 }
