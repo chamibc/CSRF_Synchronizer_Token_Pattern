@@ -1,4 +1,9 @@
-<p>
-  Autheticated!!!
-  <a routerLink="/">Go back</a>
-</p>
+<div class="login-block">
+  <h1>Transition</h1>
+  <div class="form-group">
+  <input type="number" [(ngModel)]="fundjson.amount" value="" placeholder="Amount" />
+  <input type="hidden" [(ngModel)]="fundjson.csrf"  value="">
+  </div>
+  <button (click)="transfer()">Transfer</button>
+  <p>{{response}}</p>
+</div>

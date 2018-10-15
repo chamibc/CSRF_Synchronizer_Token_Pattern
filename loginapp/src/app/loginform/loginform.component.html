@@ -1,17 +1,10 @@
-<form (submit)="loginUser($event)">
-  <div class="input">
-    <label>
-      Username
-    </label>
-    <input type="text">
+<div class="login-block">
+  <h1>Login</h1>
+  <div class="form-group">
+  <input type="text" [(ngModel)]="userdetails.username" value="" placeholder="Username" id="username" />
   </div>
-  <div class="input">
-    <label>
-      Password
-    </label>
-    <input type="password">
-  </div>
-  <div class="input">
-    <input type="submit" value="Login">
-  </div>
-</form>
+  <div class="form-group">
+  <input type="password" [(ngModel)]="userdetails.password" value="" placeholder="Password" id="password" />
+</div>
+  <button (click)="login()">Submit</button>
+</div>

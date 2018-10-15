@@ -1,34 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { UserService } from '../user.service';
-
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-loginform',
   templateUrl: './loginform.component.html',
   styleUrls: ['./loginform.component.css']
 })
 export class LoginformComponent implements OnInit {
-
-  constructor(private router: Router, private user: UserService) { }
+  userdetails = {username: '', password: ''};
+  constructor(private http: HttpClient, private cookieService: CookieService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  loginUser(e) {
-    e.preventDefault();
-    console.log(e);
-    const username = e.target.elements[0].value;
-    const password = e.target.elements[1].value;
-
-    if (username === 'admin' && password === 'admin') {
-      this.user.setUserLoggedIn();
-      this.router.navigate(['/dashboard']);
-
-    }
-
-
-
-
+  login() {
+    this.http.post('http://localhost:3000/login', {
+      username: this.userdetails.username,
+      password: this.userdetails.password
+    }).subscribe(
+      res => {
+          let response;
+          response = res;
+          console.log(res);
+          this.cookieService.set( 'SessionID', response.sessioniD );
+          this.router.navigate(['/dashboard']);
+      },
+      err => {
+          console.log(err);
+      }
+  );
   }
 
 }
