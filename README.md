@@ -2,17 +2,17 @@
 
 Repository includes how to use Synchronize Token Pattern in an Angular & Node.Js environment.
 
-Installation
-clone the repository to you local machine
-Open CSRF_Synchronizer_Token_Pattern folder -> loginapp folder
-$ npm install
-Run the solution
-$ ng serve
-Open CSRF_Synchronizer_Token_Pattern folder -> backend folder
-$ npm install
-Run the solution
-$ node app
-Open http://localhost:4200 from the Browser
+--Installation--
+1)clone the repository to you local machine
+2)Open CSRF_Synchronizer_Token_Pattern folder -> loginapp folder
+3) type npm install on cmd
+-- Run the solution--
+4) type ng serve on cmd
+5) Open CSRF_Synchronizer_Token_Pattern folder -> backend folder
+6)type npm install cmd
+--Run the solution--
+7)type node app on cmd
+8)Open http://localhost:4200 from the Browser
 
 The Default login credentials are,
 
