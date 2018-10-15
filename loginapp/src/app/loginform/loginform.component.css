@@ -5,11 +5,11 @@
     align-items: center;
 }
 
-div.input {
+div {
     position: relative;
 }
 
-div.input label {
+div label {
     position: absolute;
     top: 0;
     transform: translateY(-50%);
@@ -18,12 +18,12 @@ div.input label {
     padding: 5px 2px;
 }
 
-div.input input {
+div input {
     padding: 10px 20px;
     font-size: 25px;
     outline: 0;
 }
 
-div.input {
+div {
     margin-top: 20px;
 }
